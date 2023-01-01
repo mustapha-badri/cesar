@@ -49,7 +49,6 @@ valeur_decalage = {
     "8" : 34,
     "9" : 35,
     
-
 }
 
 lettres_separees = list(mot)
@@ -61,8 +60,7 @@ for i in range(len(lettres_separees)):
         while remplacement == "":
             for x in valeur_decalage:
                 if x == lettres_separees[i]:
-                    valeur = (valeur_decalage[x] + int(decalage)) % 26
-                    print(valeur)
+                    valeur = (valeur_decalage[x] + int(decalage)) % len(valeur_decalage)
                     break
             for y in valeur_decalage:
                 if valeur_decalage[y] == valeur:
