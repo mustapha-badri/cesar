@@ -91,6 +91,11 @@ valeur_decalage = {
     "]" : 73,
     "/" : 74,
     ":" : 75,
+    "." : 76,
+    "," : 77,
+    ";" : 78,
+    "!" : 79,
+    "?" : 80
 }
 
 # Séparer les lettres du mot dans une liste.
