@@ -10,7 +10,9 @@ if decalage.isnumeric() == False:
     print("Le décalage est invalide.")
     sys.exit()
 
+
 valeur_decalage = {
+
     "a" : 0,
     "b" : 1,
     "c" : 2,
@@ -73,24 +75,23 @@ valeur_decalage = {
     "X" : 59,
     "Y" : 60,
     "Z" : 61,
+
 }
+
 
 lettres_separees = list(mot)
 
 for i in range(len(lettres_separees)):
-
-    if (lettres_separees[i].isalpha() == True) or (lettres_separees[i].isnumeric() == True):
-        remplacement = ""
-        while remplacement == "":
-            for x in valeur_decalage:
-                if x == lettres_separees[i]:
-                    valeur = (valeur_decalage[x] + int(decalage)) % len(valeur_decalage)
-                    break
-            for y in valeur_decalage:
-                if valeur_decalage[y] == valeur:
-                    remplacement = y
-                    lettres_separees[i] = remplacement
+    if lettres_separees[i] in valeur_decalage:
+        for x in valeur_decalage:
+            if x == lettres_separees[i]:
+                valeur = (valeur_decalage[x] + int(decalage)) % len(valeur_decalage)
+                break
+        for y in valeur_decalage:
+            if valeur_decalage[y] == valeur:
+                lettres_separees[i] = y
 
 mot_decale = "".join(lettres_separees)
 
 print(mot_decale)
+
