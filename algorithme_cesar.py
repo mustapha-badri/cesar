@@ -38,6 +38,17 @@ valeur_decalage = {
     "x" : 23,
     "y" : 24,
     "z" : 25,
+    "0" : 26,
+    "1" : 27,
+    "2" : 28,
+    "3" : 29,
+    "4" : 30,
+    "5" : 31,
+    "6" : 32,
+    "7" : 33,
+    "8" : 34,
+    "9" : 35,
+    
 
 }
 
@@ -45,24 +56,18 @@ lettres_separees = list(mot)
 
 for i in range(len(lettres_separees)):
 
-    if lettres_separees[i].isalpha():
+    if (lettres_separees[i].isalpha() == True) or (lettres_separees[i].isnumeric() == True):
         remplacement = ""
         while remplacement == "":
             for x in valeur_decalage:
                 if x == lettres_separees[i]:
                     valeur = (valeur_decalage[x] + int(decalage)) % 26
+                    print(valeur)
                     break
             for y in valeur_decalage:
                 if valeur_decalage[y] == valeur:
                     remplacement = y
                     lettres_separees[i] = remplacement
-
-    elif lettres_separees[i].isnumeric():
-        remplacement = 0
-        while remplacement == 0:
-            remplacement = int(lettres_separees[i]) + int(decalage)
-            lettres_separees[i] = remplacement
-            lettres_separees[i] = str(lettres_separees[i])
 
 mot_decale = "".join(lettres_separees)
 
