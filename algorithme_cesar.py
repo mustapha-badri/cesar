@@ -100,7 +100,7 @@ lettres_separees = list(mot)
 for i in range(len(lettres_separees)):
     # Vérifier que la lettre est dans le dictionnaire.
     if lettres_separees[i] in valeur_decalage:
-        # Parcourir le dictionnaire et stocker la valeur de la lettre qu'il doit remplacer celle-ci.
+        # Parcourir le dictionnaire et stocker la valeur de la lettre décalé.
         for x in valeur_decalage:
             if x == lettres_separees[i]:
                 valeur = (valeur_decalage[x] + int(decalage)) % len(valeur_decalage)
